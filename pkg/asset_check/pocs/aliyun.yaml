@@ -1,0 +1,40 @@
+name: alibaba-oss
+rules:
+  - tag: alibaba-oss
+    regions:
+      - cn-beijing
+      - cn-shanghai
+      - cn-nanjing
+      - cn-fuzhou
+      - cn-qingdao
+      - cn-beijing
+      - cn-zhangjiakou
+      - cn-huhehaote
+      - cn-wulanchabu
+      - cn-shenzhen
+      - cn-heyuan
+      - cn-guangzhou
+      - cn-chengdu
+      - cn-hongkong
+      - us-west-1
+      - us-east-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-southeast-3
+      - ap-southeast-5
+      - ap-southeast-6
+      - ap-southeast-7
+      - ap-south-1
+      - eu-central-1
+      - eu-west-1
+      - me-east-1
+    region_traversal: false
+    method: GET
+    format:
+      - https://{word}{sep}{env}.oss-{region}.aliyuncs.com/
+      - https://{env}{sep}{word}.oss-{region}.aliyuncs.com/
+    expression:
+      - 403
+      - 200

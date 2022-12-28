@@ -1,0 +1,28 @@
+name: huaweicloud-obs
+rules:
+  - tag: huaweicloud-obs
+    regions:
+      - cn-north-1
+      - cn-north-4
+      - cn-north-9
+      - cn-east-2
+      - cn-east-3
+      - cn-south-1
+      - cn-south-4
+      - cn-south-2
+      - cn-southwest-2
+      - ap-southeast-2
+      - ap-southeast-3
+      - ap-southeast-1
+      - af-south-1
+      - la-north-2
+      - la-south-2
+      - eu-west-0
+    region_traversal: false
+    method: HEAD
+    format:
+      - https://obs.myhuaweicloud.com/{word}{sep}{env}
+      - https://obs.myhuaweicloud.com/{env}{sep}{word}
+    expression:
+      - 403
+      - 200
