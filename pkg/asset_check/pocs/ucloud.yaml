@@ -1,0 +1,34 @@
+name: ucloud
+rules:
+  - tag: ucloud-us3
+    regions:
+      - cn-bj
+      - cn-wlcb
+      - cn-sh2
+      - cn-gd
+      - hk
+      - us-ca
+      - sg
+      - idn-jakarta
+      - tw-tp
+      - afr-nigeria
+      - bra-saopaulo
+      - uae-dubai
+      - ge-fra
+      - vn-sng
+      - us-ws
+      - ind-mumbai
+      - kr-seoul
+      - jpn-tky
+      - th-bkk
+      - uk-london
+    region_traversal: false
+    method: HEAD
+    format:
+      - https://{word}{sep}{env}.{region}.ufileos.com/
+      - https://{env}{sep}{word}.{region}.ufileos.com/
+    expression:
+      - 404
+      - 401
+      - 403
+      - 200

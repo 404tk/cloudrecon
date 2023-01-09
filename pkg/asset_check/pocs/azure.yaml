@@ -1,0 +1,13 @@
+name: azure
+rules:
+  - tag: azure-blob
+    regions:
+      - eastus
+    region_traversal: false
+    method: HEAD
+    format:
+      - https://{word}{sep}{env}.blob.core.windows.net/
+      - https://{env}{sep}{word}.blob.core.windows.net/
+    expression:
+      - 400
+      - 200
