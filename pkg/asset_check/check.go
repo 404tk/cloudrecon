@@ -51,6 +51,14 @@ func (cfg *Config) extractRealRegion(resp *http.Response, url, region string) {
 				url = fmt.Sprintf("https://%s.%s", result[0][1], result[0][2])
 			}
 		}
+	} else if resp.StatusCode == 404 {
+		body, err := ioutil.ReadAll(resp.Body)
+		if err == nil {
+			r, _ := regexp.Compile(`<Code>NoSuchBucket</Code>`)
+			if r.MatchString(string(body)) {
+				return
+			}
+		}
 	}
 	cfg.Bar.Clear()
 	fmt.Printf("[%d] %s\n", resp.StatusCode, url)

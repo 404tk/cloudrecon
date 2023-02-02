@@ -36,5 +36,6 @@ rules:
       - https://{word}{sep}{env}.oss-{region}.aliyuncs.com/
       - https://{env}{sep}{word}.oss-{region}.aliyuncs.com/
     expression:
+      - 404
       - 403
       - 200
