@@ -16,6 +16,10 @@ rules:
       - cn-guangzhou
       - cn-chengdu
       - cn-hongkong
+      - cn-hzfinance
+      - cn-shanghai-finance-1-pub
+      - cn-szfinance
+      - cn-beijing-finance-1-pub
       - us-west-1
       - us-east-1
       - ap-northeast-1
